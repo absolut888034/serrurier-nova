@@ -1,0 +1,54 @@
+# Auto-publish: any branch pushed to the repo (e.g. by a claude.ai/code session)
+# is built; if the build passes, it is merged into main, which Vercel deploys to
+# www.serruriernova.ch. If the build fails, nothing is published.
+name: Auto-publish
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+permissions:
+  contents: write
+
+concurrency:
+  group: auto-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Build (the site must compile before publishing)
+        run: npm run build
+
+      - name: Merge into main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          if git merge-base --is-ancestor origin/main HEAD; then
+            # Branch already contains main: fast-forward main to it.
+            git push origin HEAD:main
+          else
+            # main moved on since the branch started: merge it in.
+            git checkout -B main origin/main
+            git merge --no-ff --no-edit "$GITHUB_SHA" -m "Publication automatique : $GITHUB_REF_NAME"
+            npm run build
+            git push origin main
+          fi
+
+      - name: Delete the published branch
+        run: git push origin --delete "$GITHUB_REF_NAME" || true
