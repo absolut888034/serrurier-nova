@@ -4,10 +4,10 @@ Web SEO multi-página + programmatic SEO para una cerrajería 24/7 en Vernier (c
 
 ## Cómo se trabaja con este repo (léelo primero)
 
-- **El dueño del negocio gestiona el sitio él mismo con Claude Code.** No es desarrollador: explica en lenguaje sencillo, sin jerga, y en español.
+- **El dueño del negocio gestiona el sitio él mismo con Claude Code.** No es desarrollador: explica en lenguaje sencillo, sin jerga, **en el idioma en que te escriba (francés o alemán)**. Frases que usará: «Montre-moi le résultat» / «Zeig mir das Ergebnis» = arrancar `npm run dev` y darle el enlace localhost; «publie» / «veröffentlichen» = `npm run build` + commit + `git push`; «annule le dernier changement» / «letzte Änderung rückgängig» = `git revert` + push.
 - **Publicar = `git push` a la rama `main`.** Vercel está conectado al repo de GitHub y despliega solo en 1-2 min. No uses `npx vercel --prod`.
 - Antes de publicar: `npm run build` debe pasar sin errores, y el dueño debe haber visto el cambio en `npm run dev` (http://localhost:3000).
-- Haz commits pequeños con mensajes claros en español. Pide confirmación antes de `git push`.
+- Haz commits pequeños con mensajes claros. Antes de `git pull` al empezar cada sesión (por si hubo cambios desde otro ordenador). Pide confirmación antes de `git push`.
 - Para deshacer en producción: Vercel → Deployments → Instant Rollback; luego `git revert` del commit.
 - **URL base canónica: `https://www.serruriernova.ch`** en metadata, sitemap, robots, JSON-LD y OG. Nunca reintroducir `serruriernovageneve.ch` en el código (en 2026 eso desindexó el sitio en Google).
 - El formulario de contacto (`app/actions/contact.ts`) **todavía no envía emails**: solo hace `console.info`. Pendiente conectar un servicio de envío (p. ej. Resend) hacia serruriernova@gmail.com.
