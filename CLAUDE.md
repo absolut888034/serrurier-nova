@@ -4,13 +4,15 @@ Web SEO multi-página + programmatic SEO para una cerrajería 24/7 en Vernier (c
 
 ## Cómo se trabaja con este repo (léelo primero)
 
-- **El dueño del negocio gestiona el sitio él mismo con Claude Code.** No es desarrollador: explica en lenguaje sencillo, sin jerga, **en el idioma en que te escriba (francés o alemán)**. Frases que usará: «Montre-moi le résultat» / «Zeig mir das Ergebnis» = arrancar `npm run dev` y darle el enlace localhost; «publie» / «veröffentlichen» = `npm run build` + commit + `git push`; «annule le dernier changement» / «letzte Änderung rückgängig» = `git revert` + push.
-- **Publicar = `git push` a la rama `main`.** Vercel está conectado al repo de GitHub y despliega solo en 1-2 min. No uses `npx vercel --prod`.
-- Antes de publicar: `npm run build` debe pasar sin errores, y el dueño debe haber visto el cambio en `npm run dev` (http://localhost:3000).
-- Haz commits pequeños con mensajes claros. Antes de `git pull` al empezar cada sesión (por si hubo cambios desde otro ordenador). Pide confirmación antes de `git push`.
-- Para deshacer en producción: Vercel → Deployments → Instant Rollback; luego `git revert` del commit.
+- **El dueño del negocio gestiona el sitio él mismo con Claude Code.** No es desarrollador: explica en lenguaje sencillo, sin jerga, **en el idioma en que te escriba (francés o alemán)**. Frases que usará: «annule le dernier changement» / «letzte Änderung rückgängig» = `git revert` en rama nueva + push, y explicarle que haga merge de la PR.
+- **El dueño trabaja desde claude.ai/code (sesiones en la nube), no en local.** Flujo: haces el cambio → `npm run build` debe pasar → commit y push de tu rama → le dices, en frases cortas en su idioma, que pulse **Create PR**, abra la PR en GitHub, espere el comentario de Vercel con el enlace **Preview** para revisar, y si le gusta pulse **Merge pull request** → **Confirm merge**. El merge a `main` publica en www.serruriernova.ch en 1-2 min.
+- Vercel (plan Hobby) despliega commits de colaboradores solo porque el repo es **público**. No lo hagas privado. Nunca subas claves ni datos privados al repo: los secretos van en las variables de entorno de Vercel.
+- **Publicar = merge/push a `main`.** No uses `npx vercel --prod`.
+- Antes de dar el cambio por terminado: `npm run build` debe pasar sin errores.
+- Haz commits pequeños con mensajes claros. Si trabajas en local, `git pull` al empezar.
+- Para deshacer: `git revert` del commit en una rama nueva → PR → el dueño hace merge. En urgencia, Mate puede usar Instant Rollback en Vercel.
+- El formulario de contacto envía con Resend si existe `RESEND_API_KEY` en Vercel (cuenta Resend creada con serruriernova@gmail.com, sin dominio verificado → solo puede enviar a esa dirección).
 - **URL base canónica: `https://www.serruriernova.ch`** en metadata, sitemap, robots, JSON-LD y OG. Nunca reintroducir `serruriernovageneve.ch` en el código (en 2026 eso desindexó el sitio en Google).
-- El formulario de contacto (`app/actions/contact.ts`) **todavía no envía emails**: solo hace `console.info`. Pendiente conectar un servicio de envío (p. ej. Resend) hacia serruriernova@gmail.com.
 
 ## El negocio
 
