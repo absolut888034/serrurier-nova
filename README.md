@@ -25,3 +25,5 @@ Abre [http://localhost:3000](http://localhost:3000).
 ## Workflow
 
 La home se construye **sección por sección**, validada con el usuario antes de pasar a la siguiente. Ver orden en `docs/ARCHITECTURE.md`.
+
+<!-- Publication automatique testée le 15.11.2026 -->
