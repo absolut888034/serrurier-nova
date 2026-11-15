@@ -58,19 +58,54 @@ export async function submitContact(
     }
   }
 
-  // TODO: branch a Resend/Nodemailer/Plunk client to forward to serruriernova@gmail.com.
-  console.info("[contact] submission", {
-    nom,
-    telephone,
-    email,
-    adresse,
-    npa,
-    ville,
-    acces,
-    type,
-    urgence,
-    message,
-  })
+  const fields = { nom, telephone, email, adresse, npa, ville, acces, type, urgence, message }
+  console.info("[contact] submission", fields)
+
+  // Forward to the owner's Gmail via Resend. The Resend account is registered
+  // with serruriernova@gmail.com, so sending to that address needs no domain setup.
+  const apiKey = process.env.RESEND_API_KEY
+  if (apiKey) {
+    const lines = [
+      `Nom : ${nom}`,
+      `Téléphone : ${telephone}`,
+      `Email : ${email || "—"}`,
+      `Adresse : ${adresse}, ${npa} ${ville}`,
+      `Accès / étage : ${acces || "—"}`,
+      `Type d'intervention : ${type}`,
+      `Urgence : ${urgence}`,
+      "",
+      "Message :",
+      message || "—",
+    ]
+    try {
+      const res = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
+        body: JSON.stringify({
+          from: "Site Serrurier Nova <onboarding@resend.dev>",
+          to: [process.env.CONTACT_TO_EMAIL || "serruriernova@gmail.com"],
+          reply_to: email || undefined,
+          subject: `Nouvelle demande du site — ${type} — ${nom} (${ville})`,
+          text: lines.join("\n"),
+        }),
+      })
+      if (!res.ok) {
+        console.error("[contact] resend error", res.status, await res.text())
+        return {
+          status: "error",
+          message:
+            "L'envoi n'a pas fonctionné. Appelez-nous directement au 022 557 65 59 ou écrivez sur WhatsApp au 076 475 08 81.",
+        }
+      }
+    } catch (err) {
+      console.error("[contact] resend failed", err)
+      return {
+        status: "error",
+        message:
+          "L'envoi n'a pas fonctionné. Appelez-nous directement au 022 557 65 59 ou écrivez sur WhatsApp au 076 475 08 81.",
+      }
+    }
+  }
 
   return {
     status: "success",
