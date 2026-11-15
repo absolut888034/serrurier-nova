@@ -35,7 +35,7 @@ Web SEO multi-página + programmatic SEO para una cerrajería 24/7 en Vernier (c
 - **Content**: TS data files para servicios/comunas; MDX para blog
 - **Imágenes**: `next/image` con assets locales en `public/images/`
 - **Fuentes**: `next/font` con Fraunces (Google) + Switzer (Fontshare) + Geist Mono (Google)
-- **Hosting**: Vercel, conectado al repo de GitHub (cada push a `main` despliega). Dominio en Hostinger (cuenta del dueño), DNS apuntando a Vercel
+- **Hosting**: Vercel (cuenta de Mate, el desarrollador original), conectado al repo GitHub `absolut888034/serrurier-nova` (el dueño es colaborador). Cada push a `main` despliega. Dominio en Hostinger (cuenta del dueño), DNS apuntando a Vercel
 - **Schema**: JSON-LD `LocalBusiness`, `Service`, `FAQPage`, `BreadcrumbList`, `Review`
 
 ## Paleta (derivada del logo navy del cliente)
