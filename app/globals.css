@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+/* ─────── Design tokens ─────── */
+@theme inline {
+  /* Color: navy del logo del cliente */
+  --color-navy:        #1c2548;
+  --color-navy-2:      #2a3563;
+  --color-navy-3:      #0e1428;
+  --color-navy-deep:   #060914;
+
+  /* Grises fríos / plata */
+  --color-silver:      #d4d8e2;
+  --color-silver-2:    #98a0b3;
+  --color-steel:       #5e6680;
+
+  /* Blanco crudo neutral para secciones claras */
+  --color-paper:       #fcfcfb;
+  --color-paper-2:     #f4f5f7;
+
+  /* Tipografía oscura */
+  --color-ink:         #0d1226;
+  --color-ink-2:       #3a3f55;
+
+  /* Acentos */
+  --color-brass:       #c9a24a;
+  --color-brass-deep:  #9b7a2e;
+  --color-vermillion:  #d23a1c;
+  --color-vermillion-2:#b53117;
+  --color-green:       #5f8a3d;
+
+  /* Líneas */
+  --color-hairline:        rgba(255, 255, 255, 0.10);
+  --color-hairline-dark:   rgba(13, 18, 38, 0.12);
+  --color-hairline-strong: rgba(13, 18, 38, 0.22);
+
+  /* Tipografía */
+  --font-display: var(--font-fraunces), "Times New Roman", serif;
+  --font-body:    var(--font-inter-tight), system-ui, sans-serif;
+  --font-mono:    var(--font-geist-mono), "JetBrains Mono", ui-monospace, monospace;
+
+  /* Container & spacing */
+  --container-max:   1320px;
+  --gutter:          clamp(1.25rem, 3vw, 2.5rem);
+  --section-y:       clamp(4.5rem, 8vw, 7rem);
+}
+
+/* ─────── Reset & base ─────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: var(--color-vermillion); color: var(--color-paper); }
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; padding: 0; }
+img, svg, video { display: block; max-width: 100%; height: auto; }
+
+/* ─────── Utilities ─────── */
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+.display { font-family: var(--font-display); }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-steel);
+  font-variant-numeric: tabular-nums;
+}
+.eyebrow .num { color: var(--color-brass); }
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Skip-to-content link — hidden until focused via keyboard */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -120%);
+  z-index: 100;
+  padding: 0.85rem 1.2rem;
+  background: var(--color-navy);
+  color: var(--color-paper);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
+  box-shadow: 0 8px 24px -8px rgba(13, 18, 38, 0.4);
+  transition: transform 0.2s ease;
+}
+.skip-link:focus-visible {
+  transform: translate(-50%, 0);
+  outline-offset: 2px;
+}
+
+/* ─────── Animations ─────── */
+@keyframes pulse-green {
+  0%   { box-shadow: 0 0 0 0 rgba(95, 138, 61, 0.55); }
+  70%  { box-shadow: 0 0 0 8px rgba(95, 138, 61, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(95, 138, 61, 0); }
+}
+@keyframes pulse-red {
+  0%   { box-shadow: 0 0 0 0 rgba(210, 58, 28, 0.55); }
+  70%  { box-shadow: 0 0 0 8px rgba(210, 58, 28, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(210, 58, 28, 0); }
+}
+@keyframes pulse-paper {
+  0%   { box-shadow: 0 0 0 0 rgba(252, 252, 251, 0.7); }
+  70%  { box-shadow: 0 0 0 10px rgba(252, 252, 251, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(252, 252, 251, 0); }
+}
+@keyframes urg-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(210, 58, 28, 0.4); }
+  50%      { box-shadow: 0 0 0 14px rgba(210, 58, 28, 0); }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}

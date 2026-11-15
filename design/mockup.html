@@ -1,0 +1,1662 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Serrurier Nova Genève — Serrurier 24h/24 à Genève</title>
+<meta name="description" content="Serrurier 24h/24 à Genève. Intervention sous 30 minutes dans tout le canton. Tarifs annoncés à l'avance. 5,0/5 sur Google.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..700,30..70&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  /* Palette derivada del logo (navy + plata) */
+  --navy:       #1c2548;
+  --navy-2:     #2a3563;
+  --navy-3:     #0e1428;
+  --navy-deep:  #060914;
+  --silver:     #d4d8e2;
+  --silver-2:   #98a0b3;
+  --steel:      #5e6680;
+  --paper:      #f4f1ea;
+  --paper-2:    #ebe6d8;
+  --ink:        #0d1226;
+  --ink-2:      #3a3f55;
+  --brass:      #c9a24a;
+  --brass-deep: #9b7a2e;
+  --vermillion: #d23a1c;
+  --vermillion-2: #b53117;
+  --green:      #5f8a3d;
+  --hairline:   rgba(255, 255, 255, 0.10);
+  --hairline-dark: rgba(13, 18, 38, 0.12);
+
+  --display: 'Fraunces', 'Times New Roman', serif;
+  --body:    'Switzer', system-ui, sans-serif;
+  --mono:    'Geist Mono', 'JetBrains Mono', ui-monospace, monospace;
+
+  --max: 1320px;
+  --gutter: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+::selection { background: var(--vermillion); color: var(--paper); }
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+img { display: block; max-width: 100%; height: auto; }
+
+.mono { font-family: var(--mono); font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--steel);
+  font-variant-numeric: tabular-nums;
+}
+.eyebrow .num { color: var(--brass); }
+
+.container {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+/* ─────── TOP STATUS ─────── */
+.topbar {
+  background: var(--navy-3);
+  color: var(--silver);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.topbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 34px;
+  gap: 1.5rem;
+}
+.topbar-left { display: flex; align-items: center; gap: 0.6rem; }
+.dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 0 rgba(95, 138, 61, 0.5);
+  animation: pulse 2.4s ease-out infinite;
+  flex-shrink: 0;
+}
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(95, 138, 61, 0.6); }
+  70%  { box-shadow: 0 0 0 8px rgba(95, 138, 61, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(95, 138, 61, 0); }
+}
+.topbar-right { display: flex; gap: 1.5rem; }
+.topbar-right span { color: var(--silver-2); }
+@media (max-width: 760px) { .topbar-right { display: none; } }
+
+/* ─────── HEADER ─────── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(244, 241, 234, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--hairline-dark);
+}
+.header .container {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  height: 86px;
+  gap: 2rem;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+.brand img {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.brand-name {
+  font-family: var(--display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+}
+.brand-sub {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--steel);
+  margin-top: 0.25rem;
+}
+@media (max-width: 540px) { .brand-text { display: none; } }
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  font-size: 0.93rem;
+  font-weight: 500;
+}
+.nav a {
+  color: var(--ink-2);
+  position: relative;
+  padding: 0.4rem 0;
+  transition: color 0.2s;
+}
+.nav a:hover { color: var(--navy); }
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 2px;
+  background: var(--brass);
+  transition: width 0.3s ease;
+}
+.nav a:hover::after { width: 100%; }
+@media (max-width: 960px) { .nav { display: none; } }
+
+.header-call {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+.header-call .label {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--steel);
+  text-align: right;
+  line-height: 1.3;
+}
+.header-call .label .live { color: var(--vermillion); }
+.header-call .number {
+  font-family: var(--mono);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--navy);
+}
+.header-call .number:hover { color: var(--vermillion); }
+@media (max-width: 540px) {
+  .header-call .label { display: none; }
+  .header-call .number { font-size: 0.95rem; }
+}
+
+/* ─────── HERO ─────── */
+.hero {
+  position: relative;
+  background: var(--navy-3);
+  color: var(--silver);
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 90% 30%, rgba(201, 162, 74, 0.15), transparent 60%),
+    radial-gradient(ellipse 50% 50% at 10% 90%, rgba(28, 37, 72, 0.6), transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero .container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 4vw, 4rem);
+  padding-top: clamp(3.5rem, 6vw, 5.5rem);
+  padding-bottom: clamp(3rem, 5vw, 4.5rem);
+}
+@media (min-width: 980px) {
+  .hero .container {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+  }
+}
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.6rem;
+  color: var(--silver-2);
+}
+.hero-eyebrow .rule {
+  flex: 0 0 50px;
+  height: 1px;
+  background: var(--brass);
+  opacity: 0.8;
+}
+.hero h1 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.5rem;
+  color: var(--paper);
+}
+.hero h1 .accent {
+  color: var(--brass);
+  font-style: italic;
+  font-variation-settings: "SOFT" 70;
+  font-weight: 400;
+}
+.hero-dek {
+  font-size: clamp(1rem, 1.25vw, 1.13rem);
+  line-height: 1.6;
+  color: var(--silver);
+  max-width: 50ch;
+  margin-bottom: 2rem;
+}
+.hero-dek u {
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--brass);
+  padding-bottom: 1px;
+  color: var(--paper);
+}
+.hero-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1.05rem 1.6rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s, border-color 0.2s;
+  border: 1.5px solid transparent;
+  font-family: var(--body);
+}
+.btn-primary {
+  background: var(--vermillion);
+  color: var(--paper);
+}
+.btn-primary:hover { background: var(--vermillion-2); transform: translateY(-1px); }
+.btn-primary .num { font-family: var(--mono); font-weight: 600; }
+.btn-primary .dot { background: var(--paper); animation: pulse-light 2s ease-out infinite; }
+@keyframes pulse-light {
+  0%   { box-shadow: 0 0 0 0 rgba(244, 241, 234, 0.7); }
+  70%  { box-shadow: 0 0 0 9px rgba(244, 241, 234, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(244, 241, 234, 0); }
+}
+.btn-secondary {
+  border-color: rgba(212, 216, 226, 0.3);
+  color: var(--silver);
+}
+.btn-secondary:hover { border-color: var(--brass); color: var(--brass); }
+.btn-arrow { transition: transform 0.2s; }
+.btn:hover .btn-arrow { transform: translateX(3px); }
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  border-top: 1px solid rgba(212, 216, 226, 0.18);
+  border-bottom: 1px solid rgba(212, 216, 226, 0.18);
+}
+@media (min-width: 540px) { .hero-stats { grid-template-columns: repeat(4, 1fr); } }
+.hero-stat {
+  padding: 1.1rem 0.8rem 1.1rem 0;
+  border-right: 1px solid var(--hairline);
+}
+.hero-stat:last-child { border-right: none; }
+.hero-stat .k {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--silver-2);
+  margin-bottom: 0.4rem;
+}
+.hero-stat .v {
+  font-family: var(--display);
+  font-size: 1.55rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--paper);
+}
+.hero-stat .v small {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--silver-2);
+  letter-spacing: 0.06em;
+  margin-left: 0.2rem;
+  font-weight: 400;
+}
+@media (max-width: 539px) {
+  .hero-stat:nth-child(2n) { border-right: none; }
+  .hero-stat:nth-child(-n+2) { border-bottom: 1px solid var(--hairline); }
+}
+
+.hero-image-wrap {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(212, 216, 226, 0.15);
+}
+.hero-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 16/11;
+}
+.hero-image-tag {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background: rgba(6, 9, 20, 0.85);
+  backdrop-filter: blur(8px);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.55rem 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid rgba(212, 216, 226, 0.15);
+}
+.hero-image-tag .dot { background: var(--vermillion); animation: pulse-red 2s ease-out infinite; }
+@keyframes pulse-red {
+  0%   { box-shadow: 0 0 0 0 rgba(210, 58, 28, 0.6); }
+  70%  { box-shadow: 0 0 0 8px rgba(210, 58, 28, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(210, 58, 28, 0); }
+}
+
+/* ─────── TICKER ─────── */
+.ticker {
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--silver-2);
+  background: var(--navy-deep);
+}
+.ticker-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 0.85rem 0;
+  animation: scroll 55s linear infinite;
+}
+.ticker-track > span { display: inline-flex; align-items: center; gap: 0.75rem; }
+.ticker-dot {
+  display: inline-block;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--vermillion);
+  flex-shrink: 0;
+}
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ─────── SECTION CHROME ─────── */
+section.block {
+  padding-top: clamp(4.5rem, 8vw, 7rem);
+  padding-bottom: clamp(4.5rem, 8vw, 7rem);
+}
+section.block + section.block { border-top: 1px solid var(--hairline-dark); }
+
+.block-head {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+  margin-bottom: clamp(2.5rem, 4vw, 3.5rem);
+}
+@media (min-width: 880px) {
+  .block-head { grid-template-columns: 0.35fr 1fr; gap: 3rem; align-items: end; }
+}
+.block-head h2 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.022em;
+  max-width: 22ch;
+  color: var(--ink);
+}
+.block-head h2 em {
+  font-style: italic;
+  font-variation-settings: "SOFT" 70;
+  font-weight: 400;
+  color: var(--navy);
+}
+.block-head .dek {
+  font-size: 1.02rem;
+  color: var(--ink-2);
+  max-width: 56ch;
+  margin-top: 1rem;
+}
+
+/* ─────── TARIFS ─────── */
+#tarifs { background: var(--paper-2); }
+.tarifs-table {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-top: 2px solid var(--navy);
+}
+.tarifs-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.2rem;
+  align-items: baseline;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--hairline-dark);
+  transition: background 0.2s, padding 0.2s;
+}
+.tarifs-row:hover {
+  background: rgba(255, 255, 255, 0.4);
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.tarifs-row .ix {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--brass-deep);
+  letter-spacing: 0.06em;
+  min-width: 2rem;
+  font-weight: 600;
+}
+.tarifs-row .name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.tarifs-row .name small {
+  display: block;
+  font-weight: 400;
+  font-size: 0.88rem;
+  color: var(--ink-2);
+  margin-top: 0.25rem;
+}
+.tarifs-row .price {
+  font-family: var(--mono);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--navy);
+  text-align: right;
+  white-space: nowrap;
+}
+.tarifs-row .price small {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--steel);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 0.2rem;
+}
+.tarifs-foot {
+  margin-top: 1.6rem;
+  font-size: 0.9rem;
+  color: var(--ink-2);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  padding-top: 1.5rem;
+}
+.tarifs-foot::before {
+  content: '✓';
+  color: var(--brass-deep);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+/* ─────── SERVICES (card style) ─────── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.service-card {
+  background: var(--paper);
+  border: 1px solid var(--hairline-dark);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.2s;
+  cursor: pointer;
+}
+.service-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px -20px rgba(13, 18, 38, 0.25);
+  border-color: rgba(28, 37, 72, 0.3);
+}
+.service-image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: var(--navy-3);
+}
+.service-image img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.service-card:hover .service-image img { transform: scale(1.04); }
+.service-image-label {
+  position: absolute;
+  left: 50%;
+  bottom: 1.1rem;
+  transform: translateX(-50%);
+  text-align: center;
+  color: var(--paper);
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.6rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 18px rgba(6, 9, 20, 0.5);
+  line-height: 1.05;
+}
+.service-image-label small {
+  display: block;
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  margin-top: 0.35rem;
+  color: var(--silver);
+}
+.service-image-label::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--brass);
+  margin: 0.75rem auto 0;
+}
+.service-body {
+  padding: 1.4rem 1.5rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.service-tag {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brass-deep);
+  background: rgba(201, 162, 74, 0.13);
+  padding: 0.35rem 0.7rem;
+  border-radius: 99px;
+  align-self: start;
+  font-weight: 600;
+}
+.service-card h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.service-card p {
+  font-size: 0.94rem;
+  color: var(--ink-2);
+  flex: 1;
+}
+.service-link {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-weight: 600;
+  margin-top: 0.3rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: gap 0.2s, color 0.2s;
+}
+.service-card:hover .service-link { gap: 0.7rem; color: var(--brass-deep); }
+
+/* ─────── PHOTO BREAK ─────── */
+.photo-break {
+  position: relative;
+  overflow: hidden;
+  background: var(--navy-3);
+}
+.photo-break img {
+  width: 100%;
+  height: clamp(280px, 45vw, 500px);
+  object-fit: cover;
+  opacity: 0.75;
+}
+.photo-break-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(6, 9, 20, 0.85) 0%, rgba(6, 9, 20, 0.4) 60%, rgba(6, 9, 20, 0.15) 100%);
+}
+.photo-break-cap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+}
+.photo-break-cap .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  max-width: var(--max);
+  width: 100%;
+}
+.photo-break-cap .quote {
+  font-family: var(--display);
+  font-weight: 400;
+  color: var(--paper);
+  font-size: clamp(1.5rem, 3.2vw, 2.6rem);
+  line-height: 1.18;
+  max-width: 24ch;
+  letter-spacing: -0.015em;
+}
+.photo-break-cap .quote em {
+  font-style: italic;
+  font-variation-settings: "SOFT" 70;
+  color: var(--brass);
+}
+.photo-break-cap .caption {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--silver-2);
+  margin-top: 0.6rem;
+}
+
+/* ─────── ZONES ─────── */
+.zones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  border-top: 2px solid var(--navy);
+  gap: 0;
+}
+.zone {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  padding: 1rem 1.5rem 1rem 0;
+  border-bottom: 1px solid var(--hairline-dark);
+  transition: padding-left 0.2s, background 0.2s;
+}
+.zone:hover { padding-left: 0.5rem; background: rgba(255,255,255,0.4); }
+.zone .name {
+  font-family: var(--display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+.zone .time {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--steel);
+  letter-spacing: 0.04em;
+}
+.zones-foot {
+  margin-top: 2rem;
+}
+.zones-foot a {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  border-bottom: 1.5px solid var(--brass);
+  padding-bottom: 3px;
+  font-weight: 600;
+}
+
+/* ─────── AVIS ─────── */
+.avis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.avis {
+  padding: 2rem 2rem 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  background: var(--paper);
+  border: 1px solid var(--hairline-dark);
+  border-radius: 14px;
+  border-top: 3px solid var(--brass);
+}
+.stars {
+  font-family: var(--mono);
+  letter-spacing: 0.18em;
+  color: var(--brass-deep);
+  font-size: 1rem;
+}
+.avis-quote {
+  font-family: var(--display);
+  font-size: 1.12rem;
+  line-height: 1.5;
+  color: var(--ink);
+  flex: 1;
+  font-weight: 500;
+}
+.avis-meta {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--steel);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--hairline-dark);
+}
+.avis-meta .name {
+  color: var(--navy);
+  letter-spacing: 0.04em;
+  text-transform: none;
+  font-size: 0.92rem;
+  font-family: var(--body);
+  font-weight: 600;
+}
+
+/* ─────── MÉTHODE ─────── */
+.method-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-top: 2px solid var(--navy);
+}
+@media (min-width: 720px) { .method-grid { grid-template-columns: repeat(2, 1fr); column-gap: 4rem; } }
+.method {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--hairline-dark);
+  align-items: start;
+}
+.method-num {
+  font-family: var(--display);
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--brass);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  min-width: 4rem;
+  font-style: italic;
+  font-variation-settings: "SOFT" 70;
+}
+.method-body { padding-top: 0.7rem; }
+.method-title {
+  font-family: var(--display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.method-desc {
+  font-size: 0.95rem;
+  color: var(--ink-2);
+  line-height: 1.55;
+  max-width: 42ch;
+}
+
+/* ─────── À PROPOS ─────── */
+.apropos { background: var(--navy-3); color: var(--silver); }
+.apropos .block-head h2 { color: var(--paper); }
+.apropos .block-head h2 em { color: var(--brass); }
+.apropos .block-head .dek { color: var(--silver); }
+.apropos .eyebrow { color: var(--silver-2); }
+.apropos-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+@media (min-width: 880px) {
+  .apropos-content { grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: start; }
+}
+.apropos-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.apropos-lead {
+  font-family: var(--display);
+  font-size: clamp(1.35rem, 2vw, 1.65rem);
+  line-height: 1.45;
+  font-weight: 400;
+  color: var(--paper);
+  max-width: 42ch;
+}
+.apropos-lead em {
+  font-style: italic;
+  font-variation-settings: "SOFT" 70;
+  color: var(--brass);
+}
+.apropos-spec {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.7rem 1.8rem;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--hairline);
+}
+.apropos-spec dt {
+  color: var(--silver-2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+}
+.apropos-spec dd { color: var(--paper); }
+.apropos-card {
+  background: var(--navy);
+  padding: 2rem;
+  border: 1px solid rgba(212, 216, 226, 0.12);
+  border-radius: 14px;
+}
+.apropos-card h3 {
+  font-family: var(--display);
+  font-size: 1.2rem;
+  color: var(--paper);
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+.apropos-card p {
+  font-size: 0.92rem;
+  color: var(--silver);
+  margin-bottom: 1.2rem;
+}
+.apropos-card .badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.apropos-card .badge {
+  background: rgba(201, 162, 74, 0.15);
+  color: var(--brass);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 99px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* ─────── FAQ ─────── */
+.faq-list { border-top: 2px solid var(--navy); }
+.faq-item { border-bottom: 1px solid var(--hairline-dark); }
+.faq-q {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.5rem 0;
+  cursor: pointer;
+  transition: padding-left 0.2s;
+}
+.faq-q:hover { padding-left: 0.5rem; }
+.faq-q .ix {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--brass-deep);
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+.faq-q .q {
+  font-family: var(--display);
+  font-size: 1.18rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.faq-q .plus {
+  font-family: var(--mono);
+  font-size: 1.3rem;
+  color: var(--navy);
+  transition: transform 0.3s, color 0.2s;
+  font-weight: 500;
+}
+.faq-item.open .plus { transform: rotate(45deg); color: var(--vermillion); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+.faq-item.open .faq-a { max-height: 360px; }
+.faq-a-inner {
+  padding: 0 0 1.6rem 0;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: var(--ink-2);
+  max-width: 64ch;
+  padding-left: calc(2rem + 1.5rem);
+}
+@media (max-width: 640px) { .faq-a-inner { padding-left: 0; } }
+
+/* ─────── FINAL CTA ─────── */
+.finalcta {
+  background: var(--navy-3);
+  padding: clamp(5rem, 9vw, 8rem) 0;
+  position: relative;
+  overflow: hidden;
+  color: var(--silver);
+}
+.finalcta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 80% at 50% 50%, rgba(201, 162, 74, 0.10), transparent 70%),
+    radial-gradient(ellipse 60% 50% at 50% 100%, rgba(210, 58, 28, 0.10), transparent 70%);
+  pointer-events: none;
+}
+.finalcta .container {
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.finalcta h2 {
+  font-family: var(--display);
+  font-size: clamp(2rem, 4.5vw, 3.6rem);
+  font-weight: 500;
+  letter-spacing: -0.022em;
+  line-height: 1.05;
+  max-width: 22ch;
+  color: var(--paper);
+}
+.finalcta h2 em {
+  font-style: italic;
+  font-variation-settings: "SOFT" 70;
+  color: var(--brass);
+  font-weight: 400;
+}
+.finalcta .big-number {
+  font-family: var(--mono);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 600;
+  color: var(--paper);
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.3rem 2.5rem;
+  background: var(--vermillion);
+  border-radius: 4px;
+  transition: background 0.2s, transform 0.2s;
+}
+.finalcta .big-number:hover { background: var(--vermillion-2); transform: translateY(-2px); }
+
+/* ─────── FOOTER ─────── */
+.footer {
+  background: var(--navy-deep);
+  color: var(--silver);
+  padding: clamp(3rem, 6vw, 5rem) 0 2rem;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--hairline);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(3, 1fr);
+  gap: 2.5rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--hairline);
+}
+@media (max-width: 880px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .footer-grid { grid-template-columns: 1fr; } }
+.footer h4 {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--silver-2);
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+}
+.footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.footer ul a, .footer ul li { color: var(--silver); transition: color 0.2s; }
+.footer ul a:hover { color: var(--brass); }
+.footer-brand { display: flex; align-items: center; gap: 0.85rem; }
+.footer-brand img { height: 56px; width: auto; }
+.footer-brand-text { color: var(--paper); font-family: var(--display); font-size: 1.15rem; font-weight: 600; }
+.footer-tagline {
+  font-family: var(--display);
+  font-size: 1rem;
+  color: var(--silver);
+  margin-top: 1rem;
+  max-width: 32ch;
+  line-height: 1.5;
+}
+.footer-tagline em { font-style: italic; color: var(--brass); font-variation-settings: "SOFT" 70; }
+.footer-bottom {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--silver-2);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ─────── REVEAL ANIM ─────── */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+.stagger-1 { transition-delay: 0.05s; }
+.stagger-2 { transition-delay: 0.15s; }
+.stagger-3 { transition-delay: 0.25s; }
+.stagger-4 { transition-delay: 0.35s; }
+.stagger-5 { transition-delay: 0.45s; }
+
+</style>
+</head>
+<body>
+
+<!-- TOP STATUS -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-left">
+      <span class="dot"></span>
+      <span>Opérationnel · <span id="live-time">—</span> CET</span>
+    </div>
+    <div class="topbar-right">
+      <span>Vernier · 1219</span>
+      <span>5,0 ★ · 8 avis Google</span>
+      <span>Délai actuel · 18 min</span>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container">
+    <a href="/" class="brand">
+      <img src="images/logo.png" alt="Serrurier Nova Genève">
+      <div class="brand-text">
+        <span class="brand-name">Serrurier Nova</span>
+        <span class="brand-sub">Genève · Depuis 2014</span>
+      </div>
+    </a>
+    <nav class="nav">
+      <a href="#tarifs">Tarifs</a>
+      <a href="#services">Services</a>
+      <a href="#zones">Zones</a>
+      <a href="#avis">Avis</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="tel:+41225576559" class="header-call">
+      <span class="label">Disponible <span class="live">·</span> maintenant<br>Appel direct</span>
+      <span class="number">022 557 65 59</span>
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div>
+      <div class="reveal stagger-1 in hero-eyebrow eyebrow">
+        <span class="rule"></span>
+        <span><span class="num">·</span> Serrurier · Vernier · Canton de Genève</span>
+      </div>
+      <h1 class="reveal stagger-2 in">
+        Le serrurier <span class="accent">de confiance</span> à Genève, 24h/24.
+      </h1>
+      <p class="hero-dek reveal stagger-3 in">
+        Intervention sous <u>30 minutes</u> dans tout le canton. Tarifs annoncés avant l'intervention. Pas d'appel surtaxé, pas de centrale opaque — un serrurier diplômé qui vient lui-même.
+      </p>
+      <div class="hero-cta-row reveal stagger-4 in">
+        <a href="tel:+41225576559" class="btn btn-primary">
+          <span class="dot"></span>
+          Appeler · <span class="num">022 557 65 59</span>
+        </a>
+        <a href="#tarifs" class="btn btn-secondary">
+          Voir les tarifs <span class="btn-arrow">→</span>
+        </a>
+      </div>
+      <div class="hero-stats reveal stagger-5 in">
+        <div class="hero-stat"><div class="k">Disponibilité</div><div class="v">24<small>h/24</small></div></div>
+        <div class="hero-stat"><div class="k">Délai moyen</div><div class="v">15–30<small>min</small></div></div>
+        <div class="hero-stat"><div class="k">Note Google</div><div class="v">5,0<small>/5</small></div></div>
+        <div class="hero-stat"><div class="k">Communes</div><div class="v">45<small>/45</small></div></div>
+      </div>
+    </div>
+    <div class="hero-image-wrap reveal stagger-2 in">
+      <img src="images/hero-locksmith.png" alt="Serrurier Nova en intervention dans un immeuble à Genève">
+      <div class="hero-image-tag">
+        <span class="dot"></span>
+        Intervention en cours · Vernier
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span><span class="ticker-dot"></span> Dernière intervention · il y a 12 min · Carouge · ouverture de porte</span>
+    <span><span class="ticker-dot"></span> Avant · 47 min · Meyrin · changement de cylindre</span>
+    <span><span class="ticker-dot"></span> Avant · 1 h 12 · Plainpalais · porte claquée</span>
+    <span><span class="ticker-dot"></span> Avant · 2 h 04 · Lancy · effraction sécurisée</span>
+    <span><span class="ticker-dot"></span> Avant · 3 h 18 · Eaux-Vives · double de clé</span>
+    <span><span class="ticker-dot"></span> Dernière intervention · il y a 12 min · Carouge · ouverture de porte</span>
+    <span><span class="ticker-dot"></span> Avant · 47 min · Meyrin · changement de cylindre</span>
+    <span><span class="ticker-dot"></span> Avant · 1 h 12 · Plainpalais · porte claquée</span>
+    <span><span class="ticker-dot"></span> Avant · 2 h 04 · Lancy · effraction sécurisée</span>
+    <span><span class="ticker-dot"></span> Avant · 3 h 18 · Eaux-Vives · double de clé</span>
+  </div>
+</div>
+
+<!-- 01 TARIFS -->
+<section class="block" id="tarifs">
+  <div class="container">
+    <div class="block-head">
+      <div class="eyebrow"><span class="num">01</span> / Tarifs</div>
+      <div>
+        <h2>Nos tarifs, <em>annoncés</em> avant l'intervention.</h2>
+        <p class="dek">Le prix vous est confirmé au téléphone, avant qu'un technicien ne se déplace. Si un imprévu surgit, on vous le dit et on attend votre accord. C'est la différence avec une centrale d'appel.</p>
+      </div>
+    </div>
+
+    <div class="tarifs-table">
+      <div class="tarifs-row">
+        <span class="ix">01</span>
+        <div class="name">Ouverture de porte claquée<small>Sans dégât. Quelques minutes en moyenne.</small></div>
+        <div class="price">229 CHF<small>tout compris</small></div>
+      </div>
+      <div class="tarifs-row">
+        <span class="ix">02</span>
+        <div class="name">Ouverture de porte fermée à clé<small>Technique adaptée selon le type de serrure.</small></div>
+        <div class="price">269 CHF<small>tout compris</small></div>
+      </div>
+      <div class="tarifs-row">
+        <span class="ix">03</span>
+        <div class="name">Changement de cylindre<small>Pose comprise. Cylindre standard ou breveté.</small></div>
+        <div class="price">dès 180 CHF<small>main-d'œuvre</small></div>
+      </div>
+      <div class="tarifs-row">
+        <span class="ix">04</span>
+        <div class="name">Pose de serrure haute sécurité<small>Kaba, Fichet, Bricard — sur devis.</small></div>
+        <div class="price">dès 350 CHF<small>main-d'œuvre</small></div>
+      </div>
+      <div class="tarifs-row">
+        <span class="ix">05</span>
+        <div class="name">Blindage de porte<small>Alternative économique à la porte blindée.</small></div>
+        <div class="price">dès 1 500 CHF<small>matériel + pose</small></div>
+      </div>
+      <div class="tarifs-row">
+        <span class="ix">06</span>
+        <div class="name">Porte blindée certifiée A2P<small>Fichet, Picard. Garantie 10 ans.</small></div>
+        <div class="price">dès 2 800 CHF<small>matériel + pose</small></div>
+      </div>
+    </div>
+
+    <p class="tarifs-foot">
+      Déplacement compris dans tout le canton. Cartes, TWINT et facture acceptés. Devis gratuit pour toute prestation hors urgence.
+    </p>
+  </div>
+</section>
+
+<!-- PHOTO BREAK -->
+<div class="photo-break">
+  <img src="images/svc-securisation.png" alt="Installation d'une serrure haute sécurité à Genève">
+  <div class="photo-break-overlay"></div>
+  <div class="photo-break-cap">
+    <div class="container">
+      <p class="quote">Chaque porte de Genève a son histoire. <em>On la respecte.</em></p>
+      <p class="caption">10 ans · 45 communes · 5,0 ★ sur Google</p>
+    </div>
+  </div>
+</div>
+
+<!-- 02 SERVICES (card style) -->
+<section class="block" id="services">
+  <div class="container">
+    <div class="block-head">
+      <div class="eyebrow"><span class="num">02</span> / Services</div>
+      <div>
+        <h2>Ce que nous savons faire — <em>vraiment</em>.</h2>
+        <p class="dek">Six prestations principales, sur lesquelles nous intervenons quotidiennement depuis dix ans. Pas de sous-traitance, pas d'apprenti envoyé seul en pleine nuit.</p>
+      </div>
+    </div>
+
+    <div class="services-grid">
+      <a class="service-card" href="#">
+        <div class="service-image">
+          <img src="images/svc-ouverture.png" alt="Ouverture de porte à Genève">
+          <div class="service-image-label">Ouverture<small>de porte</small></div>
+        </div>
+        <div class="service-body">
+          <span class="service-tag">Urgence</span>
+          <h3>Ouverture de porte</h3>
+          <p>Porte claquée, clés oubliées, serrure bloquée. Ouverture fine et sans destruction dans 9 cas sur 10.</p>
+          <span class="service-link">En savoir plus →</span>
+        </div>
+      </a>
+
+      <a class="service-card" href="#">
+        <div class="service-image">
+          <img src="images/svc-changement.png" alt="Changement de serrure et cylindre">
+          <div class="service-image-label">Changement<small>de serrure</small></div>
+        </div>
+        <div class="service-body">
+          <span class="service-tag">Service</span>
+          <h3>Changement de serrure</h3>
+          <p>Remplacement complet de serrure, cylindre, verrou. Solutions de fermeture adaptées à votre porte.</p>
+          <span class="service-link">En savoir plus →</span>
+        </div>
+      </a>
+
+      <a class="service-card" href="#">
+        <div class="service-image">
+          <img src="images/svc-securisation.png" alt="Sécurisation et blindage de porte">
+          <div class="service-image-label">Sécurisation<small>haute protection</small></div>
+        </div>
+        <div class="service-body">
+          <span class="service-tag">Service</span>
+          <h3>Sécurisation</h3>
+          <p>Renforcement de la sécurité des portes : blindage, barres anti-effraction, serrures A2P.</p>
+          <span class="service-link">En savoir plus →</span>
+        </div>
+      </a>
+
+      <a class="service-card" href="#">
+        <div class="service-image">
+          <img src="images/svc-ouverture.png" alt="Porte blindée certifiée">
+          <div class="service-image-label">Porte<small>blindée A2P</small></div>
+        </div>
+        <div class="service-body">
+          <span class="service-tag">Service</span>
+          <h3>Porte blindée</h3>
+          <p>Pose de portes certifiées A2P (Fichet, Picard). Conseil sur la classe adaptée à votre logement.</p>
+          <span class="service-link">En savoir plus →</span>
+        </div>
+      </a>
+
+      <a class="service-card" href="#">
+        <div class="service-image">
+          <img src="images/svc-changement.png" alt="Coffre-fort résidentiel à Genève">
+          <div class="service-image-label">Coffre<small>-fort</small></div>
+        </div>
+        <div class="service-body">
+          <span class="service-tag">Service</span>
+          <h3>Coffre-fort</h3>
+          <p>Conseil, fourniture et pose de coffres-forts certifiés EN 1143-1, classes I à III.</p>
+          <span class="service-link">En savoir plus →</span>
+        </div>
+      </a>
+
+      <a class="service-card" href="#">
+        <div class="service-image">
+          <img src="images/svc-securisation.png" alt="Dépannage après effraction">
+          <div class="service-image-label">Après<small>effraction</small></div>
+        </div>
+        <div class="service-body">
+          <span class="service-tag">Urgence</span>
+          <h3>Dépannage après effraction</h3>
+          <p>Sécurisation immédiate, constat photographique pour l'assurance, devis de remise en état.</p>
+          <span class="service-link">En savoir plus →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 03 ZONES -->
+<section class="block" id="zones">
+  <div class="container">
+    <div class="block-head">
+      <div class="eyebrow"><span class="num">03</span> / Zones desservies</div>
+      <div>
+        <h2>Quinze à trente minutes <em>partout</em> dans le canton.</h2>
+        <p class="dek">Basés à Vernier, nous couvrons les 45 communes du canton. Délais moyens constatés sur six mois.</p>
+      </div>
+    </div>
+
+    <div class="zones-grid">
+      <div class="zone"><span class="name">Genève centre</span><span class="time">~ 18 min</span></div>
+      <div class="zone"><span class="name">Vernier</span><span class="time">~ 8 min</span></div>
+      <div class="zone"><span class="name">Carouge</span><span class="time">~ 22 min</span></div>
+      <div class="zone"><span class="name">Lancy</span><span class="time">~ 17 min</span></div>
+      <div class="zone"><span class="name">Meyrin</span><span class="time">~ 14 min</span></div>
+      <div class="zone"><span class="name">Onex</span><span class="time">~ 19 min</span></div>
+      <div class="zone"><span class="name">Thônex</span><span class="time">~ 25 min</span></div>
+      <div class="zone"><span class="name">Chêne-Bougeries</span><span class="time">~ 24 min</span></div>
+      <div class="zone"><span class="name">Chêne-Bourg</span><span class="time">~ 26 min</span></div>
+      <div class="zone"><span class="name">Plan-les-Ouates</span><span class="time">~ 23 min</span></div>
+      <div class="zone"><span class="name">Grand-Saconnex</span><span class="time">~ 12 min</span></div>
+      <div class="zone"><span class="name">Versoix</span><span class="time">~ 21 min</span></div>
+    </div>
+    <div class="zones-foot">
+      <a href="#">Voir les 45 communes →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 04 AVIS -->
+<section class="block" id="avis">
+  <div class="container">
+    <div class="block-head">
+      <div class="eyebrow"><span class="num">04</span> / Avis</div>
+      <div>
+        <h2>Huit avis. <em>Cinq étoiles.</em> Sans exception.</h2>
+        <p class="dek">Tous les avis sont vérifiés et publics sur Google. Nous en sommes fiers.</p>
+      </div>
+    </div>
+
+    <div class="avis-grid">
+      <article class="avis">
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <p class="avis-quote">« Intervention rapide à 2 h du matin pour une porte claquée. Prix annoncé au téléphone, prix payé sur place. Aucune mauvaise surprise. »</p>
+        <div class="avis-meta">
+          <span class="name">M. R.</span>
+          <span>Carouge · Mars 2026</span>
+        </div>
+      </article>
+      <article class="avis">
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <p class="avis-quote">« Très professionnel, ponctuel et transparent. M'a expliqué le problème, proposé deux options et installé un cylindre haute sécurité le jour même. »</p>
+        <div class="avis-meta">
+          <span class="name">A. B.</span>
+          <span>Plan-les-Ouates · Janvier 2026</span>
+        </div>
+      </article>
+      <article class="avis">
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <p class="avis-quote">« Appel à 23 h, sur place 20 minutes plus tard. Travail propre, paiement par TWINT, facture immédiate pour l'assurance. »</p>
+        <div class="avis-meta">
+          <span class="name">L. D.</span>
+          <span>Meyrin · Décembre 2025</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="zones-foot" style="margin-top: 1.8rem;">
+      <a href="https://www.google.com/search?q=Serrurier+Nova+Geneve" target="_blank" rel="noopener">Voir les 8 avis sur Google →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 05 MÉTHODE -->
+<section class="block">
+  <div class="container">
+    <div class="block-head">
+      <div class="eyebrow"><span class="num">05</span> / Méthode</div>
+      <div>
+        <h2>Comment <em>se déroule</em> une intervention.</h2>
+        <p class="dek">Quatre étapes, dans cet ordre, sans exception. C'est ce qui sépare un artisan d'une centrale d'appel.</p>
+      </div>
+    </div>
+
+    <div class="method-grid">
+      <div class="method">
+        <div class="method-num">01</div>
+        <div class="method-body">
+          <h3 class="method-title">Appel</h3>
+          <p class="method-desc">Vous décrivez le problème. Je vous dis si je peux le résoudre, en combien de temps je peux être chez vous, et combien cela coûtera.</p>
+        </div>
+      </div>
+      <div class="method">
+        <div class="method-num">02</div>
+        <div class="method-body">
+          <h3 class="method-title">Diagnostic</h3>
+          <p class="method-desc">Sur place, je vérifie la serrure, la porte et le contexte. Si le devis change, je vous le dis avant de toucher quoi que ce soit.</p>
+        </div>
+      </div>
+      <div class="method">
+        <div class="method-num">03</div>
+        <div class="method-body">
+          <h3 class="method-title">Intervention</h3>
+          <p class="method-desc">Outils non destructifs en priorité. Je remplace ou répare uniquement ce qui le nécessite, avec des pièces de qualité reconnue.</p>
+        </div>
+      </div>
+      <div class="method">
+        <div class="method-num">04</div>
+        <div class="method-body">
+          <h3 class="method-title">Paiement</h3>
+          <p class="method-desc">Cartes, TWINT, espèces ou facture. Reçu détaillé immédiat, utilisable pour l'assurance ou la régie.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 À PROPOS -->
+<section class="block apropos">
+  <div class="container">
+    <div class="block-head">
+      <div class="eyebrow"><span class="num">06</span> / À propos</div>
+      <div>
+        <h2>Une entreprise <em>indépendante</em>, depuis dix ans à Genève.</h2>
+      </div>
+    </div>
+
+    <div class="apropos-content">
+      <div class="apropos-text">
+        <p class="apropos-lead">
+          Nova Serrurerie est une entreprise indépendante, basée à Châtelaine depuis 2014. Pas de centrale, pas de sous-traitance. Le serrurier qui répond au téléphone est celui qui vient chez vous, avec son nom, son matériel et ses certifications.
+        </p>
+        <dl class="apropos-spec">
+          <dt>Fondation</dt><dd>2014 · Châtelaine</dd>
+          <dt>Forme</dt><dd>Entreprise individuelle</dd>
+          <dt>Numéro IDE</dt><dd>CHE-XXX.XXX.XXX</dd>
+          <dt>Assurance RC</dt><dd>5 000 000 CHF</dd>
+          <dt>Adhésions</dt><dd>USIE · USS</dd>
+          <dt>Paiement</dt><dd>Cartes · TWINT · Facture</dd>
+        </dl>
+      </div>
+
+      <div class="apropos-card">
+        <h3>Certifications & partenaires</h3>
+        <p>Formé chez les principaux constructeurs de serrures haute sécurité. Habilité à intervenir sur l'ensemble des systèmes brevetés.</p>
+        <div class="badges">
+          <span class="badge">Fichet</span>
+          <span class="badge">Kaba</span>
+          <span class="badge">Bricard</span>
+          <span class="badge">Picard</span>
+          <span class="badge">A2P</span>
+          <span class="badge">EN 1143-1</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 FAQ -->
+<section class="block" id="faq">
+  <div class="container">
+    <div class="block-head">
+      <div class="eyebrow"><span class="num">07</span> / Questions fréquentes</div>
+      <div>
+        <h2>Les questions que <em>vous nous posez</em> le plus.</h2>
+      </div>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentNode.classList.toggle('open')">
+          <span class="ix">01</span><span class="q">Combien coûte réellement une ouverture de porte à Genève ?</span><span class="plus">+</span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          Pour une porte simplement claquée, 229 CHF tout compris. Pour une porte fermée à clé, 269 CHF. Ces prix incluent le déplacement dans tout le canton, jour comme nuit. Méfiez-vous des annonces « dès 80 CHF » : ce sont presque toujours des centrales d'appel qui facturent ensuite 800 à 1 200 CHF la prestation.
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentNode.classList.toggle('open')">
+          <span class="ix">02</span><span class="q">Êtes-vous vraiment disponibles 24 heures sur 24 ?</span><span class="plus">+</span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          Oui. Le 022 557 65 59 est répondu par un serrurier — pas par un standard. Si la ligne est occupée, rappel sous cinq minutes. Mêmes tarifs jour, nuit, week-end et jours fériés.
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentNode.classList.toggle('open')">
+          <span class="ix">03</span><span class="q">Quels moyens de paiement acceptez-vous ?</span><span class="plus">+</span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          Visa, Mastercard, American Express, TWINT, espèces et facture. Facture remise immédiatement, conforme aux exigences des assurances et régies.
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentNode.classList.toggle('open')">
+          <span class="ix">04</span><span class="q">Que faire si ma porte a été forcée ?</span><span class="plus">+</span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          Appelez avant de toucher à quoi que ce soit. Nous arrivons rapidement, sécurisons l'accès, prenons les photos nécessaires pour votre constat d'assurance, et établissons un devis de remise en état. Mise en sécurité le soir même, remplacement définitif sous 48 h.
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentNode.classList.toggle('open')">
+          <span class="ix">05</span><span class="q">Travaillez-vous avec les assurances et les régies ?</span><span class="plus">+</span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          Oui. Facture détaillée systématique avec photos avant/après si nécessaire. Travail régulier avec les principales régies du canton.
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentNode.classList.toggle('open')">
+          <span class="ix">06</span><span class="q">Comment être sûr de ne pas tomber sur un faux serrurier ?</span><span class="plus">+</span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          Trois vérifications : (1) il vous donne un prix au téléphone, par écrit si demandé ; (2) il a une adresse physique vérifiable dans le canton ; (3) il accepte la facture et le paiement par carte, pas seulement les espèces. Si un point manque, raccrochez.
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="finalcta">
+  <div class="container">
+    <h2>Une porte fermée n'attend pas. <em>Nous non plus.</em></h2>
+    <a href="tel:+41225576559" class="big-number">
+      <span class="dot" style="background: var(--paper);"></span>
+      022 557 65 59
+    </a>
+    <p class="eyebrow">Disponible maintenant · Réponse en moins d'une minute</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="images/logo.png" alt="Serrurier Nova Genève">
+          <span class="footer-brand-text">Serrurier Nova</span>
+        </div>
+        <p class="footer-tagline">Le serrurier <em>de confiance</em> à Genève, depuis dix ans.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+41225576559">022 557 65 59</a></li>
+          <li><a href="tel:+41764750881">076 475 08 81</a></li>
+          <li><a href="mailto:serruriernova@gmail.com">serruriernova@gmail.com</a></li>
+          <li>Chem. De-Maisonneuve 12D<br>1219 Châtelaine</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Ouverture de porte</a></li>
+          <li><a href="#">Changement de serrure</a></li>
+          <li><a href="#">Porte blindée</a></li>
+          <li><a href="#">Coffre-fort</a></li>
+          <li><a href="#">Après effraction</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Zones</h4>
+        <ul>
+          <li><a href="#">Genève</a></li>
+          <li><a href="#">Vernier</a></li>
+          <li><a href="#">Carouge</a></li>
+          <li><a href="#">Meyrin</a></li>
+          <li><a href="#">Voir les 45 communes →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Serrurier Nova Genève · CHE-XXX.XXX.XXX</span>
+      <span>Mentions légales · Politique de confidentialité</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function tick() {
+  const now = new Date();
+  const t = now.toLocaleTimeString('fr-CH', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Zurich' });
+  const el = document.getElementById('live-time');
+  if (el) el.textContent = t;
+}
+tick();
+setInterval(tick, 30000);
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>

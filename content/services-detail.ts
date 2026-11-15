@@ -1,0 +1,181 @@
+/**
+ * Contenu enrichi pour chaque page de service.
+ * Les champs de base (slug, titre, image…) restent dans `services.ts`.
+ */
+
+export interface ServiceSituation {
+  k: string
+  v: string
+}
+
+export interface ServiceIncluded {
+  k: string
+  v: string
+}
+
+export interface ServiceFAQ {
+  q: string
+  a: string
+}
+
+export interface ServiceMeta {
+  delay: string
+  guarantee: string
+  payment: string
+}
+
+export interface ServiceDetail {
+  /** Phrase d'accroche (hero subtitle, ~1 phrase). */
+  lead: string
+  /** Long intro après le hero (2–3 paragraphes, prose). */
+  intro: string[]
+  /** Cas d'usage typiques. */
+  situations: ServiceSituation[]
+  /** Ce que la prestation inclut. */
+  includes: ServiceIncluded[]
+  /** Données factuelles affichées dans le hero. */
+  meta: ServiceMeta
+  /** Questions fréquentes spécifiques à la prestation. */
+  faqs: ServiceFAQ[]
+  /** Phrase finale dans le CTA banner. */
+  ctaTitle: string
+  ctaAccent: string
+}
+
+export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
+  "ouverture-de-porte": {
+    lead: "Ouverture fine, sans destruction dans neuf cas sur dix. Dans tout le canton, jour comme nuit.",
+    intro: [
+      "Une porte qui ne s'ouvre plus, c'est rarement le bon moment. La règle est simple : on appelle l'artisan qui répond — pas un standard. Vous décrivez la situation, on vous donne un délai et un prix avant tout déplacement.",
+      "Sur place, l'ouverture se fait avec des outils non destructifs : crochets, picks, demi-cylindres. La serrure reste intacte dans la grande majorité des cas. Quand elle ne peut pas l'être — cylindre cassé, anti-effraction haute sécurité fermé à clé — on vous explique pourquoi avant d'agir.",
+    ],
+    situations: [
+      { k: "Porte claquée", v: "Vous êtes sorti, la porte s'est refermée derrière vous. Ouverture fine en quelques minutes." },
+      { k: "Clés perdues", v: "Les clés ne sont plus en votre possession. Ouverture, puis on parle du changement de cylindre." },
+      { k: "Clés à l'intérieur", v: "Porte fermée à clé avec les clés restées dedans. Technique adaptée au cylindre installé." },
+      { k: "Serrure bloquée", v: "Mécanisme grippé, clé qui tourne dans le vide ou cassée dans le canon. Diagnostic puis intervention." },
+      { k: "Cylindre cassé", v: "Plus aucune clé ne fonctionne. Démontage du cylindre cassé, ouverture, remplacement le cas échéant." },
+      { k: "Enfant ou animal seul", v: "Une priorité absolue. Intervention immédiate, ouverture la plus rapide possible." },
+    ],
+    includes: [
+      { k: "Déplacement compris", v: "Dans tout le canton de Genève, jour, nuit, week-end et jours fériés." },
+      { k: "Ouverture non destructive", v: "Tentée systématiquement en premier. La serrure reste utilisable dans 9 cas sur 10." },
+      { k: "Diagnostic sur place", v: "Vérification de la serrure, du cylindre et du dormant. Conseils si une intervention complémentaire est utile." },
+      { k: "Facture détaillée", v: "Remise immédiate sur place. Conforme aux exigences des assurances et régies." },
+    ],
+    meta: {
+      delay: "Délai annoncé au tél.",
+      guarantee: "Sans dégât",
+      payment: "Cartes · TWINT · Espèces",
+    },
+    faqs: [
+      {
+        q: "Combien de temps pour ouvrir une porte claquée ?",
+        a: "L'ouverture elle-même prend en général quelques minutes une fois sur place — le crochetage est rapide pour un professionnel équipé. Le délai total dépend surtout du temps de route, qui varie selon votre commune, l'heure et le trafic. Il vous est confirmé au téléphone avant tout déplacement, sans surprise.",
+      },
+      {
+        q: "Allez-vous endommager ma porte ?",
+        a: "Pas dans 9 cas sur 10. L'ouverture commence toujours par des techniques fines (crochetage, demi-cylindre, by-pass). On ne perce que si la serrure résiste vraiment — et dans ce cas, on vous explique pourquoi avant.",
+      },
+      {
+        q: "Si la serrure est abîmée après l'ouverture ?",
+        a: "Très rare avec une ouverture fine. Si une pièce doit être remplacée, le devis est annoncé avant intervention. Aucune surfacturation surprise.",
+      },
+      {
+        q: "La nuit et les jours fériés, c'est plus cher ?",
+        a: "Non. Mêmes conditions 24h/24, 7j/7. C'est ce qui sépare un artisan d'une centrale d'appel.",
+      },
+    ],
+    ctaTitle: "Une porte fermée n'attend pas.",
+    ctaAccent: "Nous non plus.",
+  },
+
+  "changement-de-serrure": {
+    lead: "Remplacement de serrure, cylindre ou verrou. Toutes marques, conseil sur la haute sécurité.",
+    intro: [
+      "Un changement de serrure est rarement une urgence, mais c'est souvent un moment-clé : déménagement, perte de clés, séparation, ou simplement une serrure d'origine qui mérite mieux. On commence par comprendre votre situation avant de proposer.",
+      "On travaille avec toutes les grandes marques européennes — Kaba, Fichet, Bricard, Vachette, Picard, Mul-T-Lock — et on vous explique sans jargon la différence entre une serrure standard, une serrure haute sécurité et un cylindre certifié. Vous choisissez en connaissance de cause.",
+    ],
+    situations: [
+      { k: "Emménagement", v: "Vous arrivez dans un logement dont les anciens occupants peuvent avoir des doubles. On remet les compteurs à zéro." },
+      { k: "Clés perdues", v: "On remplace le cylindre (rapide, économique) ou la serrure complète selon le diagnostic." },
+      { k: "Après séparation", v: "Discret et rapide. On peut conserver le bâti de serrure et ne changer que la partie ouverture." },
+      { k: "Serrure ancienne", v: "Bâti d'origine qui montre des signes de fatigue ou pas conforme aux standards actuels." },
+      { k: "Passage en haute sécurité", v: "Mise à niveau vers un cylindre A2P★/★★/★★★ ou une serrure certifiée." },
+      { k: "Régie / mandat", v: "Travail régulier avec les principales régies du canton. Facture conforme, photos avant/après." },
+    ],
+    includes: [
+      { k: "Audit de la porte existante", v: "On vérifie le dormant, le pêne, la gâche et l'état général avant de proposer." },
+      { k: "Fourniture et pose", v: "Serrure ou cylindre choisi ensemble. Pose dans la foulée, sans retour." },
+      { k: "Jeu de clés complet", v: "Toutes les clés du nouveau système, sans surcoût caché." },
+      { k: "Test et finitions", v: "Cycle complet vérifié — ouverture, fermeture, condamnation, ajustement de la gâche si nécessaire." },
+    ],
+    meta: {
+      delay: "Sous 48 h",
+      guarantee: "Pièces 2 ans",
+      payment: "Cartes · TWINT · Facture",
+    },
+    faqs: [
+      {
+        q: "Quelle est la différence entre changer la serrure et changer le cylindre ?",
+        a: "Le cylindre est la partie où l'on insère la clé — c'est lui qu'on change quand on perd ses clés (relativement rapide). La serrure complète comprend le bâti, le pêne, la gâche. On la remplace quand elle est usée ou pour passer à un niveau de sécurité supérieur.",
+      },
+      {
+        q: "Quelles marques posez-vous ?",
+        a: "Kaba (très répandu en Suisse romande), Fichet, Bricard, Vachette, Picard, Mul-T-Lock, Vachette, Heracles. Si vous avez une exigence spécifique (régie, copropriété), on s'adapte.",
+      },
+      {
+        q: "Combien de temps ça prend ?",
+        a: "Le remplacement d'un cylindre est rapide ; celui d'une serrure complète (bâti, pêne, gâche) demande plus de temps. La durée exacte dépend de votre porte et du modèle choisi — elle est annoncée au moment du devis. Si la prestation est planifiable, on convient d'un créneau qui vous arrange.",
+      },
+      {
+        q: "Qu'est-ce qu'une serrure A2P ?",
+        a: "A2P est la certification française de référence : ★ résiste 5 min à l'effraction, ★★ 10 min, ★★★ 15 min. Pour un logement en rez-de-chaussée ou un duplex avec accès terrasse, on recommande au minimum A2P★★.",
+      },
+    ],
+    ctaTitle: "Changer une serrure,",
+    ctaAccent: "c'est un choix, pas une urgence.",
+  },
+
+  "depannage-apres-effraction": {
+    lead: "Sécurisation immédiate, constat photo pour l'assurance, devis de remise en état. Dans cet ordre.",
+    intro: [
+      "Une effraction laisse une porte fragilisée et une situation à gérer avec votre assurance. On intervient en deux temps : d'abord la mise en sécurité le soir même — vous devez pouvoir refermer chez vous —, puis le remplacement définitif sous 48 heures avec une serrure renforcée si nécessaire.",
+      "On documente avant de toucher quoi que ce soit : photos haute résolution du dormant, du pêne, des outils éventuellement laissés, des traces. Ces clichés sont remis avec la facture et sont acceptés par toutes les compagnies d'assurance du canton.",
+    ],
+    situations: [
+      { k: "Porte forcée à la pince", v: "Marques au niveau du pêne et de la gâche. Souvent réparable avec renforcement." },
+      { k: "Cylindre arraché", v: "Le bourrin classique. Cylindre à remplacer obligatoirement par un modèle anti-arrachement." },
+      { k: "Bumping ou crochetage fin", v: "Aucune marque visible. Audit complet de la serrure et du cylindre, conseils sur la résistance." },
+      { k: "Encadrement endommagé", v: "Dormant ou montant déformé. Mise en sécurité, puis devis menuiserie / réparation." },
+      { k: "Volet ou fenêtre forcés", v: "Sécurisation de l'ouvrant, conseil sur barre de sécurité ou volet renforcé." },
+    ],
+    includes: [
+      { k: "Constat photographique", v: "Photos avant intervention, archivées et fournies pour le dossier d'assurance." },
+      { k: "Mise en sécurité immédiate", v: "Vous devez pouvoir refermer chez vous le soir même. Solution provisoire si nécessaire." },
+      { k: "Devis de remise en état", v: "Détaillé, transmissible à l'assurance ou à la régie. Validité 14 jours." },
+      { k: "Remplacement définitif", v: "Sous 48 h en général. Possibilité de passer à une serrure A2P si vous le souhaitez." },
+    ],
+    meta: {
+      delay: "Mise en sécurité immédiate",
+      guarantee: "Photos pour assurance",
+      payment: "Cartes · TWINT · Facture",
+    },
+    faqs: [
+      {
+        q: "Que faire avant que vous arriviez ?",
+        a: "Ne touchez à rien — surtout pas à la serrure, au cylindre ou aux objets éventuellement laissés. Prenez vous-même quelques photos d'ensemble. Si vous suspectez une présence, sortez et appelez la police au 117.",
+      },
+      {
+        q: "L'assurance prend en charge l'intervention ?",
+        a: "Dans la grande majorité des cas oui, sous réserve de votre franchise. Notre facture est conforme aux exigences habituelles : libellé détaillé, photos avant/après, identification des pièces remplacées.",
+      },
+      {
+        q: "Combien de temps pour la remise en état définitive ?",
+        a: "La mise en sécurité est faite le jour même. Le remplacement définitif intervient sous 48 heures en général, le temps de recevoir les pièces si elles ne sont pas en stock.",
+      },
+    ],
+    ctaTitle: "Effraction ?",
+    ctaAccent: "On sécurise d'abord, on parle ensuite.",
+  },
+}
