@@ -1,12 +1,16 @@
 # Auto-publish: any branch pushed to the repo (e.g. by a claude.ai/code session)
 # is built; if the build passes, it is merged into main, which Vercel deploys to
 # www.serruriernova.ch. If the build fails, nothing is published.
+# Except ia/** branches: those go through the NexaLab portal (preview, then Publish).
 name: Auto-publish
 
 on:
   push:
     branches-ignore:
       - main
+      # Les modifications préparées par l'assistant du portail NexaLab : le client les vérifie sur
+      # l'aperçu Vercel et les publie lui-même depuis son portail (merge du PR). Jamais automatiquement.
+      - "ia/**"
 
 permissions:
   contents: write

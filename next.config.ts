@@ -1,4 +1,8 @@
 import type { NextConfig } from "next"
+import { syncContentSchema } from "./content/schema-file"
+
+// content/schema.generated.json : ce que le panneau NexaLab peut modifier (voir content/schema.ts).
+syncContentSchema()
 
 const config: NextConfig = {
   reactStrictMode: true,

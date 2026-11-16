@@ -1,0 +1,615 @@
+{
+  "version": 1,
+  "collections": {
+    "avis": {
+      "label": "Avis clients",
+      "description": "Avis Google affichés sur l'accueil. Ne jamais inventer d'avis : uniquement ceux que donne le client, tels quels.",
+      "kind": "list",
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]{0,60}$"
+          },
+          "author": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "body": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1200
+          },
+          "rating": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5
+          },
+          "location": {
+            "type": "string",
+            "maxLength": 80
+          },
+          "date": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          },
+          "isoDate": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          }
+        },
+        "required": [
+          "id",
+          "author",
+          "body",
+          "rating",
+          "location",
+          "date",
+          "isoDate"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "faq": {
+      "label": "Questions fréquentes",
+      "description": "FAQ de l'accueil.",
+      "kind": "list",
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]{0,60}$"
+          },
+          "q": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 220
+          },
+          "a": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          }
+        },
+        "required": [
+          "id",
+          "q",
+          "a"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "methode": {
+      "label": "Notre méthode",
+      "description": "Les quatre étapes d'une intervention, sur l'accueil.",
+      "kind": "list",
+      "imageFields": [
+        "image"
+      ],
+      "allowAdd": false,
+      "allowRemove": false,
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]{0,60}$"
+          },
+          "num": {
+            "type": "string",
+            "pattern": "^\\d{2}$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "body": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 600
+          },
+          "image": {
+            "type": "string",
+            "pattern": "^\\/images\\/[a-z0-9][a-z0-9._-]{0,80}\\.(webp|jpg|jpeg|png|avif)$"
+          },
+          "imageAlt": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          }
+        },
+        "required": [
+          "id",
+          "num",
+          "title",
+          "body",
+          "image",
+          "imageAlt"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "services": {
+      "label": "Services",
+      "description": "Les trois services (cartes et en-tête de leur page). Le slug (id) est l'adresse de la page.",
+      "kind": "list",
+      "imageFields": [
+        "image"
+      ],
+      "allowAdd": false,
+      "allowRemove": false,
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]{0,60}$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "shortTitle": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          },
+          "shortSub": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          },
+          "tag": {
+            "type": "string",
+            "enum": [
+              "Urgence",
+              "Service"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "image": {
+            "type": "string",
+            "pattern": "^\\/images\\/[a-z0-9][a-z0-9._-]{0,80}\\.(webp|jpg|jpeg|png|avif)$"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "shortTitle",
+          "shortSub",
+          "tag",
+          "description",
+          "image"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "services-detail": {
+      "label": "Pages des services",
+      "description": "Texte détaillé de chaque page de service, même id que dans services.",
+      "kind": "list",
+      "allowAdd": false,
+      "allowRemove": false,
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]{0,60}$"
+          },
+          "lead": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 300
+          },
+          "intro": {
+            "minItems": 1,
+            "maxItems": 6,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1500
+            }
+          },
+          "situations": {
+            "maxItems": 12,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "k": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 120
+                },
+                "v": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 600
+                }
+              },
+              "required": [
+                "k",
+                "v"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "includes": {
+            "maxItems": 12,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "k": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 120
+                },
+                "v": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 600
+                }
+              },
+              "required": [
+                "k",
+                "v"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "meta": {
+            "type": "object",
+            "properties": {
+              "delay": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              },
+              "guarantee": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              },
+              "payment": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              }
+            },
+            "required": [
+              "delay",
+              "guarantee",
+              "payment"
+            ],
+            "additionalProperties": false
+          },
+          "faqs": {
+            "maxItems": 12,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "q": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 220
+                },
+                "a": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2000
+                }
+              },
+              "required": [
+                "q",
+                "a"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "ctaTitle": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "ctaAccent": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          }
+        },
+        "required": [
+          "id",
+          "lead",
+          "intro",
+          "situations",
+          "includes",
+          "meta",
+          "faqs",
+          "ctaTitle",
+          "ctaAccent"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "zones-detail": {
+      "label": "Pages des communes",
+      "description": "Texte de chaque page de commune desservie.",
+      "kind": "list",
+      "allowAdd": false,
+      "allowRemove": false,
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]{0,60}$"
+          },
+          "lead": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 300
+          },
+          "intro": {
+            "minItems": 1,
+            "maxItems": 6,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1500
+            }
+          },
+          "quartiers": {
+            "maxItems": 30,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "note": {
+                  "type": "string",
+                  "maxLength": 200
+                }
+              },
+              "required": [
+                "name"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "specifics": {
+            "maxItems": 12,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "k": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 120
+                },
+                "v": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 600
+                }
+              },
+              "required": [
+                "k",
+                "v"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "faqs": {
+            "maxItems": 12,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "q": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 220
+                },
+                "a": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2000
+                }
+              },
+              "required": [
+                "q",
+                "a"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "pitch": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          }
+        },
+        "required": [
+          "id",
+          "lead",
+          "intro",
+          "quartiers",
+          "specifics",
+          "faqs",
+          "pitch"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "blog": {
+      "label": "Articles du blog",
+      "description": "Articles du blog. L'id est l'adresse de l'article (/blog/<id>) : en minuscules avec des tirets.",
+      "kind": "list",
+      "imageFields": [
+        "image"
+      ],
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]{0,60}$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "excerpt": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "date": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "dateDisplay": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "Sécurité",
+              "Urgence",
+              "Conseil",
+              "Choix matériel"
+            ]
+          },
+          "readMinutes": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 60
+          },
+          "image": {
+            "type": "string",
+            "pattern": "^\\/images\\/[a-z0-9][a-z0-9._-]{0,80}\\.(webp|jpg|jpeg|png|avif)$"
+          },
+          "body": {
+            "minItems": 1,
+            "maxItems": 80,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "p",
+                    "h2",
+                    "h3",
+                    "ul",
+                    "ol",
+                    "callout",
+                    "quote"
+                  ]
+                },
+                "content": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 4000
+                    },
+                    {
+                      "minItems": 1,
+                      "maxItems": 20,
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1000
+                      }
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "type",
+                "content"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "faqs": {
+            "maxItems": 12,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "q": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 220
+                },
+                "a": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2000
+                }
+              },
+              "required": [
+                "q",
+                "a"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "related": {
+            "maxItems": 6,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]{0,60}$"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "excerpt",
+          "date",
+          "dateDisplay",
+          "category",
+          "readMinutes",
+          "body"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

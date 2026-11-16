@@ -1,3 +1,7 @@
+import data from "./services.json"
+import { ServiceSchema } from "./schema"
+import { z } from "zod"
+
 export type ServiceTag = "Urgence" | "Service"
 
 export interface Service {
@@ -10,37 +14,10 @@ export interface Service {
   image: string
 }
 
-export const SERVICES: Service[] = [
-  {
-    slug: "ouverture-de-porte",
-    title: "Ouverture de porte",
-    shortTitle: "Ouverture",
-    shortSub: "de porte",
-    tag: "Urgence",
-    description:
-      "Porte claquée, clés oubliées, serrure bloquée. Ouverture fine et sans destruction dans 9 cas sur 10.",
-    image: "/images/svc-ouverture.png",
-  },
-  {
-    slug: "changement-de-serrure",
-    title: "Changement de serrure",
-    shortTitle: "Changement",
-    shortSub: "de serrure",
-    tag: "Service",
-    description:
-      "Remplacement complet de serrure, cylindre ou verrou. Toutes marques : Kaba, Fichet, Bricard, Vachette.",
-    image: "/images/svc-changement.png",
-  },
-  {
-    slug: "depannage-apres-effraction",
-    title: "Dépannage après effraction",
-    shortTitle: "Après",
-    shortSub: "effraction",
-    tag: "Urgence",
-    description:
-      "Sécurisation immédiate, constat photographique pour l'assurance, devis de remise en état. Mise en sécurité le soir même.",
-    image: "/images/svc-effraction.png",
-  },
-]
+// Dans le JSON, le slug de la page s'appelle `id`.
+export const SERVICES: Service[] = z
+  .array(ServiceSchema)
+  .parse(data)
+  .map(({ id, ...service }) => ({ slug: id, ...service }))
 
 export const HOME_SERVICES = SERVICES

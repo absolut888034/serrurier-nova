@@ -35,7 +35,7 @@ Web SEO multi-página + programmatic SEO para una cerrajería 24/7 en Vernier (c
 - **Lenguaje**: TypeScript estricto
 - **Styling**: Tailwind CSS v4 (CSS-first con `@theme`)
 - **UI**: shadcn/ui solo cuando aporte; preferir componentes propios para SEO/perf
-- **Content**: TS data files para servicios/comunas; MDX para blog
+- **Content**: datos en `content/*.json`, validados con Zod en `content/schema.ts` (ver «Contenido y portal NexaLab»)
 - **Imágenes**: `next/image` con assets locales en `public/images/`
 - **Fuentes**: `next/font` con Fraunces (Google) + Switzer (Fontshare) + Geist Mono (Google)
 - **Hosting**: Vercel (cuenta de Mate, el desarrollador original), conectado al repo GitHub `absolut888034/serrurier-nova` (el dueño es colaborador). Cada push a `main` despliega. Dominio en Hostinger (cuenta del dueño), DNS apuntando a Vercel
@@ -99,7 +99,7 @@ El cerrajero ofrece únicamente estos tres servicios:
 
 ## Comunas
 
-La lista real está en `content/zones.ts` (+ textos en `content/zones-detail.ts`). Para añadir una comuna: entrada en ambos archivos con `proximity` correcta. Objetivo a largo plazo: las 45 comunas del cantón.
+La lista real está en `content/zones.ts` (+ textos en `content/zones-detail.json`, con el slug en `id`). Para añadir una comuna: entrada en ambos archivos con `proximity` correcta. Objetivo a largo plazo: las 45 comunas del cantón.
 
 ## Blog inicial (10 artículos prioritarios)
 
@@ -126,6 +126,12 @@ La lista real está en `content/zones.ts` (+ textos en `content/zones-detail.ts`
 | Porte blindée A2P (Fichet, Picard) | dès 2 800 CHF |
 
 **Diferenciador clave**: la competencia opaca cobra hasta 1 200 CHF por una apertura simple. Nova anuncia el precio antes de moverse.
+
+## Contenido y portal NexaLab
+
+- Los textos, avis, FAQ, método, servicios, páginas de servicio y de comuna, y artículos del blog están en `content/<colección>.json`. Los esquemas Zod de `content/schema.ts` los validan: si un JSON no cumple, el build falla. Los `content/*.ts` leen el JSON y exponen lo mismo de siempre a las páginas (en el JSON, el slug se llama `id`).
+- Para cambiar contenido, edita el JSON. Para cambiar la forma del contenido (un campo nuevo), edita `content/schema.ts` y el `.ts` correspondiente, y ejecuta `npm run build` en local: regenera `content/schema.generated.json`, que hay que commitear (en CI y en Vercel el build falla si no está al día).
+- NexaLab tiene en el portal del cliente un asistente que solo cambia esos JSON y las fotos de `public/images/`. Trabaja en ramas `ia/<id>` con su PR: el cliente ve el preview de Vercel y lo publica desde el portal. **Las ramas `ia/**` no se publican solas** (están excluidas en `auto-publish.yml`): no las fusiones a mano ni las borres.
 
 ## Workflow de construcción
 
