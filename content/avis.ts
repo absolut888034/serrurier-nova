@@ -6,8 +6,9 @@ export interface Review {
   author: string
   body: string
   rating: 1 | 2 | 3 | 4 | 5
-  location: string
-  date: string // affichage humain "Mars 2026"
+  /** Commune, seulement si l'auteur l'a indiquée. */
+  location?: string
+  date: string // affichage humain "Mai 2026"
   isoDate: string // ISO pour schema
 }
 

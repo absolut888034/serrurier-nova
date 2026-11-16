@@ -9,6 +9,7 @@ import { Footer } from "@/components/layout/Footer"
 import { Breadcrumb } from "@/components/ui/Breadcrumb"
 import { LiveDot } from "@/components/ui/LiveDot"
 import { CTABanner } from "@/components/sections/CTABanner"
+import { ZoneReviews } from "@/components/sections/ZoneReviews"
 import { ContactForm } from "@/components/sections/ContactForm"
 import { FinalCTA } from "@/components/sections/FinalCTA"
 
@@ -1074,6 +1075,8 @@ export default async function ZoneDetailPage({ params }: PageParams) {
             </ul>
           </div>
         </section>
+
+        <ZoneReviews zoneName={zone.name} seed={zone.order} />
 
         <ContactForm />
         <FinalCTA />

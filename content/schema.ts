@@ -25,7 +25,8 @@ export const ReviewSchema = z
     author: text(80),
     body: text(1200),
     rating: z.number().int().min(1).max(5),
-    location: z.string().max(80),
+    /** Commune, seulement si l'auteur l'a indiquée. */
+    location: z.string().max(80).optional(),
     /** Affichage humain : « Mars 2026 ». */
     date: text(40),
     isoDate: isoDay,

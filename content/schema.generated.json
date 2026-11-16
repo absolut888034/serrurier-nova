@@ -47,7 +47,6 @@
           "author",
           "body",
           "rating",
-          "location",
           "date",
           "isoDate"
         ],

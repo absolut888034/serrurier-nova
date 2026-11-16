@@ -1,29 +1,82 @@
 [
   {
-    "id": "m-r-2026-03-15",
-    "author": "M. R.",
-    "body": "Intervention rapide à 2 h du matin pour une porte claquée. Prix annoncé au téléphone, prix payé sur place. Aucune mauvaise surprise.",
+    "id": "alexandre-lopes-2026-05-28",
+    "author": "Alexandre Lopes",
+    "body": "Merci pour votre service rapide ! Je recommande.",
     "rating": 5,
-    "location": "Carouge",
+    "date": "Mai 2026",
+    "isoDate": "2026-05-28"
+  },
+  {
+    "id": "almir-saric-2026-05-28",
+    "author": "Almir Saric",
+    "body": "Très professionnel dans le respect de nos souhaits et des travaux réalisés. Nous sommes ravis et on les recommande vivement. Merci encore du travail réalisé.",
+    "rating": 5,
+    "date": "Mai 2026",
+    "isoDate": "2026-05-28"
+  },
+  {
+    "id": "enzo-damso-2026-05-23",
+    "author": "Enzo Damso",
+    "body": "Franchement je vous le recommande : il était patient, calme, à l'heure, etc.",
+    "rating": 5,
+    "date": "Mai 2026",
+    "isoDate": "2026-05-23"
+  },
+  {
+    "id": "evagella-tsekoura-2026-05-16",
+    "author": "Evagella Tsekoura",
+    "body": "Rapide, aimable et efficace. Je le recommande !",
+    "rating": 5,
+    "date": "Mai 2026",
+    "isoDate": "2026-05-16"
+  },
+  {
+    "id": "samios-michalis-2026-05-16",
+    "author": "Samios Michalis",
+    "body": "Thank you for your service. Good price.",
+    "rating": 5,
+    "date": "Mai 2026",
+    "isoDate": "2026-05-16"
+  },
+  {
+    "id": "jenny-minelly-2026-04-30",
+    "author": "Jenny Minelly",
+    "body": "Great service, quick response and fair price for Geneva and for emergency service. The locksmith was very professional!",
+    "rating": 5,
+    "date": "Avril 2026",
+    "isoDate": "2026-04-30"
+  },
+  {
+    "id": "sma-kast-2026-04-30",
+    "author": "Sma Kast",
+    "body": "Très bon, performances optimales !",
+    "rating": 5,
+    "date": "Avril 2026",
+    "isoDate": "2026-04-30"
+  },
+  {
+    "id": "konstantinos-moustakopoulos-2026-04-30",
+    "author": "Konstantinos Moustakopoulos",
+    "body": "Thank you for your professionalism and fair price!",
+    "rating": 5,
+    "date": "Avril 2026",
+    "isoDate": "2026-04-30"
+  },
+  {
+    "id": "radana-roncevic-2026-03-30",
+    "author": "Radana Roncevic",
+    "body": "Service très rapide et professionnel.",
+    "rating": 5,
     "date": "Mars 2026",
-    "isoDate": "2026-03-15"
+    "isoDate": "2026-03-30"
   },
   {
-    "id": "a-b-2026-01-22",
-    "author": "A. B.",
-    "body": "Très professionnel, ponctuel et transparent. M'a expliqué le problème, proposé deux options et installé un cylindre haute sécurité le jour même.",
+    "id": "admir-huduti-2026-03-30",
+    "author": "Admir Huduti",
+    "body": "Très bon service !",
     "rating": 5,
-    "location": "Plan-les-Ouates",
-    "date": "Janvier 2026",
-    "isoDate": "2026-01-22"
-  },
-  {
-    "id": "l-d-2025-12-08",
-    "author": "L. D.",
-    "body": "Appel à 23 h, délai annoncé directement au téléphone. Travail propre, paiement par TWINT, facture immédiate pour l'assurance.",
-    "rating": 5,
-    "location": "Meyrin",
-    "date": "Décembre 2025",
-    "isoDate": "2025-12-08"
+    "date": "Mars 2026",
+    "isoDate": "2026-03-30"
   }
 ]

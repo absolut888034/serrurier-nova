@@ -144,7 +144,7 @@ export function Avis() {
                   fontWeight: 600,
                 }}
               >
-                8 avis · Google
+                13 avis · Google
               </span>
             </div>
           </div>
@@ -159,7 +159,7 @@ export function Avis() {
             gap: "1.5rem",
           }}
         >
-          {REVIEWS.map((r) => (
+          {REVIEWS.slice(0, 6).map((r) => (
             <article
               key={r.author + r.isoDate}
               className="avis-card"
@@ -306,7 +306,7 @@ export function Avis() {
                       fontWeight: 500,
                     }}
                   >
-                    {r.location} · {r.date}
+                    {r.location ? `${r.location} · ${r.date}` : `Avis Google · ${r.date}`}
                   </span>
                 </div>
               </div>
@@ -337,7 +337,7 @@ export function Avis() {
               paddingBottom: 3,
             }}
           >
-            Voir les 8 avis sur Google →
+            Voir les 13 avis sur Google →
           </Link>
         </div>
       </div>
