@@ -137,7 +137,7 @@ La lista real está en `content/zones.ts` (+ textos en `content/zones-detail.jso
 
 ### Estado: la home y las páginas principales ya están construidas y en producción
 
-Lo que sigue es el orden histórico de construcción, como referencia. Los cambios nuevos se hacen igual: mostrar al dueño en local antes de publicar.
+Lo que sigue es el orden histórico de construcción, como referencia. Los cambios nuevos los pide el dueño desde claude.ai/code y se publican solos (ver «Cómo se trabaja con este repo»).
 
 **Orden propuesto:**
 
